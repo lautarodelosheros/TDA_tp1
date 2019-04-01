@@ -1,6 +1,11 @@
-def media(lineList):
+def media(lista):
     total = 0
-    for number in lineList:
-        total = total + int(number)
-    print("La media es: " + str(total / len(lineList)))
-    return
+
+    for numero in lista:
+        total += numero
+
+    resultado = total / len(lista)
+    mensaje = "La media es: {}".format(resultado)
+    print(mensaje)
+
+    return resultado
