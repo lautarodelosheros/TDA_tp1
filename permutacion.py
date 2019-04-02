@@ -1,4 +1,4 @@
-def permutacion(lista): 
+def permutacion(lista):
 
     if len(lista) == 0:
         return []
@@ -12,7 +12,7 @@ def permutacion(lista):
        dato = lista[i]
        lista_remanente = lista[ : i] + lista[ i + 1 : ]
 
-       for elemento in permutation(lista_remanente):
+       for elemento in permutacion(lista_remanente):
            resultado.append([dato] + elemento)
 
     return resultado

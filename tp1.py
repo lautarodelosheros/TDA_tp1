@@ -4,14 +4,17 @@ import sys
 from maximo import maximo
 from media import media
 from moda import moda
-from variacionesConRepeticion import variacionesConRepeticion
+from mediana import mediana
+from desviacion_estandar import desviacion_estandar
+from permutacion import permutacion
+from variaciones_con_repeticion import variaciones_con_repeticion
 
 if len(sys.argv) > 2:
-    fileName = sys.argv[1]
-    function = sys.argv[2]
-    if function == 'variacionesConRepeticion':
+    nombre_archivo = sys.argv[1]
+    funcion = sys.argv[2]
+    if funcion == 'variaciones_con_repeticion':
         if len(sys.argv) > 3:
-            r = sys.argv[3]
+            longitud_subconjunto = sys.argv[3]
         else:
             print("Se necesita tercer parámetro para el tamaño del subconjunto")
             exit()
@@ -19,12 +22,18 @@ else:
     print("Se necesitan al menos dos parámetros")
     exit()
 
-lineList = [line.rstrip('\n') for line in open(fileName)]
+lista = [int(line.rstrip('\n')) for line in open(nombre_archivo)]
 
-if function in locals():
-    if function == 'variacionesConRepeticion':
-        locals()[function](lineList, r)
+if funcion in locals():
+    if funcion == 'variaciones_con_repeticion':
+        variaciones = locals()[funcion](lista, int(longitud_subconjunto))
+        print("Cantidad de variaciones con repetición: ")
+        print(str(len(variaciones)) + "\n")
+        print("Lista de variaciones con repetición:\n")
+        print(variaciones)
     else:
-        locals()[function](lineList)
+        resultado = locals()[funcion](lista)
+        mensaje = "{} es: {}".format(funcion, resultado)
+        print(mensaje)
 else:
     print("Función no válida")

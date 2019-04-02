@@ -22,7 +22,7 @@ def merge(lista1, lista2):
             resultado.append( lista2[j] )
             j += 1
 
-        resultado += lista1[ i : ]
-        resultado += lista2[ j : ]
+    resultado += lista1[ i : ]
+    resultado += lista2[ j : ]
 
     return resultado
