@@ -12,5 +12,5 @@ def hacer_variaciones(lista, longitud, posicion):
 def variaciones_con_repeticion(lista, longitud):
     for i in range(longitud):
         lista_auxiliar.append(0)
-    hacer_variaciones(lista, longitud, 0)
+    hacer_variaciones(list(set(lista)), longitud, 0)
     return variaciones

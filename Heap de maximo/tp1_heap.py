@@ -9,11 +9,12 @@ from mediana import mediana
 from desviacion_estandar import desviacion_estandar
 from permutacion import permutacion
 from variaciones_con_repeticion import variaciones_con_repeticion
+from variaciones_sin_repeticion import variaciones_sin_repeticion
 
 if len(sys.argv) > 2:
     nombre_archivo = sys.argv[1]
     funcion = sys.argv[2]
-    if funcion == 'variaciones_con_repeticion':
+    if funcion in ['variaciones_con_repeticion', 'variaciones_sin_repeticion']:
         if len(sys.argv) > 3:
             longitud_subconjunto = sys.argv[3]
         else:
@@ -27,7 +28,7 @@ lista = [int(line.rstrip('\n')) * -1 for line in open(nombre_archivo)]
 heapq.heapify(lista)
 
 if funcion in locals():
-    if funcion == 'variaciones_con_repeticion':
+    if funcion in ['variaciones_con_repeticion', 'variaciones_sin_repeticion']:
         variaciones = locals()[funcion](lista, int(longitud_subconjunto))
         print("Cantidad de variaciones con repetición: ")
         print(str(len(variaciones)) + "\n")
