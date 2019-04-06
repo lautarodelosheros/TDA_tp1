@@ -1,6 +1,6 @@
 def mediana(lista):
 
-    medio = len(lista_ordenada) // 2
+    medio = len(lista) // 2
 
     if len(lista) % 2 == 0:
         numero1 = lista[medio]
