@@ -7,7 +7,7 @@ def permutaciones(heap, longitud):
         return resultado
     else:
         for numero in heap:
-            for permutacion in permutaciones(list(set(heap) - set([numero * -1])), longitud - 1):
+            for permutacion in permutaciones(list(set(heap) - set([numero])), longitud - 1):
                 resultado.append([numero * -1] + permutacion)
 
         return resultado
