@@ -1,5 +1,9 @@
 def maximo(lista):
-    el_mas_grande = 0
+
+    if len(lista) == 0:
+        raise ValueError("La lista está vacia")
+
+    el_mas_grande = lista[0]
 
     for numero in lista:
 
