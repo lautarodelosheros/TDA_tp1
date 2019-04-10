@@ -5,7 +5,7 @@ def desviacion_estandar(heap):
     distancia_total = 0
 
     for numero in heap:
-        distancia_local = numero * -1 - numero_media
+        distancia_local = (numero * -1) - numero_media
         modulo = (distancia_local) * (distancia_local)
         distancia_total += modulo
 
