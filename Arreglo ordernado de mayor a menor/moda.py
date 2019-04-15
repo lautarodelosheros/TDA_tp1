@@ -12,12 +12,7 @@ def moda(lista):
         if el_mas_grande < numero:
             el_mas_grande = numero
 
-    repeticion_maxima = 0
-
     for numero in diccionario_auxiliar:
 
         if diccionario_auxiliar[numero] == el_mas_grande:
-            repeticion_maxima = el_mas_grande
-            break
-
-    return repeticion_maxima
+            return numero
