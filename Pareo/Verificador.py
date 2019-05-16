@@ -69,12 +69,12 @@ def main():
 		indicePE = preferenciasE.index(pareja[1])
 		
 		for i in range(0, indicePE):
-			otraPareja = filter(lambda pareja: pareja[1] == preferenciasE[i], parejas)[0]
+			otraPareja = next(filter(lambda pareja: pareja[1] == preferenciasE[i], parejas))
 			if(JPR[otraPareja[1]].index(otraPareja[0]) > JPR[otraPareja[1]].index(E)):
-				print "ERROR: El matching dado no es estable"
+				print("ERROR: El matching dado no es estable")
 				return
 
-	print "El matching dado es estable"	
+	print("El matching dado es estable")	
 
 	
 
